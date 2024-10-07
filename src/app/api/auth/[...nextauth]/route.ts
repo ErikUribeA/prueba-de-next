@@ -71,7 +71,6 @@ const authOptions: NextAuthOptions = {
           return null;
         }
       }
-
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
@@ -89,6 +88,6 @@ const authOptions: NextAuthOptions = {
   },
 };
 
+// Exporta solo las funciones GET y POST usando el handler de NextAuth
 const handler = NextAuth(authOptions);
-
-export { handler as GET, handler as POST, authOptions }; // Exporta también authOptions
+export { handler as GET, handler as POST, authOptions };

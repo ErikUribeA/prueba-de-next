@@ -1,10 +1,7 @@
-// app/api/signup/route.ts
+import { NextResponse } from 'next/server';
 import { IResponseCreateUser, IUserRegistered } from '../../../types/userInterface';
 
-export async function createUser(userData: IUserRegistered): Promise<IResponseCreateUser> {
-  // Imprime la variable de entorno para ver si está siendo cargada correctamente
-  console.log('NEXTAUTH_BD_URL:', process.env.NEXTAUTH_BD_URL);
-
+async function createUser(userData: IUserRegistered): Promise<IResponseCreateUser> {
   const res = await fetch(`http://192.168.88.39:7000/auth/signup`, {
     method: 'POST',
     headers: {
@@ -18,4 +15,14 @@ export async function createUser(userData: IUserRegistered): Promise<IResponseCr
   }
 
   return res.json();
+}
+
+export async function POST(request: Request) {
+  try {
+    const userData: IUserRegistered = await request.json();
+    const createdUser = await createUser(userData);
+    return NextResponse.json(createdUser);
+  } catch (error:any) {
+    return NextResponse.json({ message: 'Error creating user', error: error.message }, { status: 500 });
+  }
 }
