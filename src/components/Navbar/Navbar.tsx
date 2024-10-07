@@ -85,15 +85,14 @@ const Navbar = () => {
       <UL>
         <StyledLink href="/"> {translate('home')} </StyledLink>
         <SelectLanguage />
-        {session?.user ? (
-          <>
-            <StyledLink href="/dashboard">Dashboard</StyledLink>
-            <ButtonOut onClick={() => signOut()}>
-              {translate('logout')}
-            </ButtonOut>
-          </>
-        ) : null}
       </UL>
+      {session?.user ? (
+        <>
+          <ButtonOut onClick={() => signOut({ callbackUrl: '/' })}>
+            {translate('logout')}
+          </ButtonOut>
+        </>
+      ) : null}
 
       {!session?.user && (
         <LeftDiv>

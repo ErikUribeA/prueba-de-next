@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { IResponseCreateUser, IUserRegistered } from '../../../types/userInterface';
 
-async function createUser(userData: IUserRegistered): Promise<IResponseCreateUser> {
+export async function createUser(userData: IUserRegistered): Promise<IResponseCreateUser> {
   const res = await fetch(`http://192.168.88.39:7000/auth/signup`, {
     method: 'POST',
     headers: {
