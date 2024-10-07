@@ -1,0 +1,19 @@
+{
+    "home" : "Home",
+    "title" : "Products",
+    "login" : "Log in",
+    "register" : "Register",
+    "language":{
+        "select": "Select language",
+        "OptionEs": "Spanish",
+        "OptionEn": "English"
+    },
+    "username" : "Username",
+    "password" : "Password",
+    "name" : "Name",
+    "email" : "Email",
+    "phone" : "Phone number",
+    "price" : "Price",
+    "add" : "Add product",
+    "category" : "Category"
+}

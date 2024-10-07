@@ -1,0 +1,19 @@
+{
+    "home" : "Inicio",
+    "login" : "Loguearse",
+    "title" : "Productos",
+    "register" : "Registrarse",
+    "language":{
+        "select": "Selecciona un idioma",
+        "OptionEs": "Español",
+        "OptionEn": "Ingles"
+    },
+    "username" : "Nombre de usuario",
+    "password" : "Contraseña",
+    "name" : "Nombre",
+    "email" : "Correo",
+    "phone" : "Numero de telefono",
+    "price" : "Precio",
+    "add" : "Añadir productos",
+    "category" : "Categoria"
+}
